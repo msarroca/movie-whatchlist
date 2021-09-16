@@ -19,17 +19,18 @@ const InputTag = ({
 
   const addTags = (event) => {
     event.preventDefault();
-    if (event.target.value !== "") {
-      setInput(event.target.value);
-      setTags([...tags, event.target.value]);
-      selectedTags([...tags, event.target.value]);
+    const cleanedInput = input.trim().toLowerCase();
+    if (cleanedInput.length && !tags.includes(cleanedInput.toLowerCase())) {
+      setInput(cleanedInput);
+      setTags([...tags, cleanedInput]);
+      selectedTags([...tags, cleanedInput]);
       setInput("");
     }
   };
 
   return (
-    <div className="tags-input">
-      <ul id="tags">
+    <div className="container-input">
+      <ul className="container-input__list" id="tags">
         {tags.map((tag, index) => (
           <li key={tag} className="tag">
             <span className="tag-title">{tag}</span>
@@ -45,6 +46,7 @@ const InputTag = ({
         ))}
       </ul>
       <input
+        className="container-input__tag"
         type="text"
         onKeyDown={(event) => (event.key === "Enter" ? addTags(event) : null)}
         onChange={onChangeGenres}
