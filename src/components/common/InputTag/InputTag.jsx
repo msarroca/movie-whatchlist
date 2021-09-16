@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./inputTag.scss";
 
 const InputTag = ({
-  placeholder, required, defaultTags, selectedTags,
+  placeholder, defaultTags, selectedTags,
 }) => {
   const [tags, setTags] = useState(defaultTags);
   const [input, setInput] = useState("");
@@ -53,21 +53,18 @@ const InputTag = ({
         onChange={onChangeGenres}
         value={input}
         placeholder={placeholder}
-        required={required}
       />
     </div>
   );
 };
 
 InputTag.propTypes = {
-  required: PropTypes.bool,
   placeholder: PropTypes.string,
   defaultTags: PropTypes.arrayOf(PropTypes.string),
   selectedTags: PropTypes.func,
 };
 
 InputTag.defaultProps = {
-  required: false,
   placeholder: null,
   defaultTags: [],
   selectedTags: null,
