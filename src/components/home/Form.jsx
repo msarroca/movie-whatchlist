@@ -2,11 +2,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addMovie } from "../../store/slices/movies/slice";
 import Input from "../common/Input/Input";
 import InputTag from "../common/InputTag/InputTag";
 import Button from "../common/Button/Button";
 import "./form.scss";
+import { createMovie } from "../../store/slices/movies/actions";
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const Form = () => {
       genres: selectedTags,
       watched: false,
     };
-    dispatch(addMovie(movie));
+    dispatch(createMovie(movie));
   };
 
   return (
