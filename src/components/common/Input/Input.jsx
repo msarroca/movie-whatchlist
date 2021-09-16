@@ -5,8 +5,8 @@ import "./input.scss";
 const Input = ({
   placeholder, type, required, name,
 }) => (
-
   <input
+    id={name}
     name={name}
     className="input-text"
     placeholder={placeholder}
