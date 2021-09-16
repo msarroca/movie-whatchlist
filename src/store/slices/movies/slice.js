@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable operator-linebreak */
 /* eslint-disable no-param-reassign */
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -15,10 +17,10 @@ const moviesSlice = createSlice({
       state.movies.push(payload);
     },
     deleteMovie: (state, { payload }) => {
-      state.movies = state.filter((_, index) => index !== payload);
+      state.movies = state.movies.filter((_, index) => index !== payload);
     },
-    addWatchedMovie: (state, { payload }) => {
-      state.movies[payload.index].watched = payload.value;
+    updateMovie: (state, { payload }) => {
+      state.movies[payload.index][payload.name] = payload.value;
     },
     setIsLoading: (state, { payload }) => {
       state.isLoading = payload;
@@ -29,11 +31,6 @@ const moviesSlice = createSlice({
   },
 });
 
-export const {
-  addMovie,
-  deleteMovie,
-  addWatchedMovie,
-  setIsLoading,
-  setError,
-} = moviesSlice.actions;
+export const { addMovie, deleteMovie, updateMovie, setIsLoading, setError } =
+  moviesSlice.actions;
 export default moviesSlice.reducer;
