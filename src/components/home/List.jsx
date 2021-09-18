@@ -12,12 +12,12 @@ const List = ({ movies }) => {
 
   return (
     <section className="list-container">
-      {movies && movies.map((movie, index) => (
+      {movies && movies.map((movie) => (
         <Card
           {...movie}
           key={movie.name}
-          setUpdateMovie={(name, value) => dispatch(updateMovie({ index, name, value }))}
-          setDeleteMovie={() => dispatch(deleteMovie(index))}
+          setUpdateMovie={(name, value) => dispatch(updateMovie({ id: movie.id, name, value }))}
+          setDeleteMovie={() => dispatch(deleteMovie(movie.id))}
         />
       ))}
     </section>
