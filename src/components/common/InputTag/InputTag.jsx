@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./inputTag.scss";
 
 const InputTag = ({
-  placeholder, defaultTags, selectedTags,
+  placeholder, tags, setTags,
 }) => {
-  const [tags, setTags] = useState(defaultTags);
   const [input, setInput] = useState("");
   const removeTags = (event, indexToRemove) => {
     event.preventDefault();
     const newTags = tags.filter((_, index) => index !== indexToRemove);
     setTags(newTags);
-    selectedTags(newTags);
   };
   const onChangeGenres = (event) => {
     const { value } = event.target;
@@ -24,10 +22,13 @@ const InputTag = ({
     if (cleanedInput.length && !tags.includes(cleanedInput.toLowerCase())) {
       setInput(cleanedInput);
       setTags([...tags, cleanedInput]);
-      selectedTags([...tags, cleanedInput]);
       setInput("");
     }
   };
+
+  useEffect(() => {
+    if (tags.length === 0) setInput("");
+  }, [tags]);
 
   return (
     <div className="container-input">
@@ -60,14 +61,15 @@ const InputTag = ({
 
 InputTag.propTypes = {
   placeholder: PropTypes.string,
-  defaultTags: PropTypes.arrayOf(PropTypes.string),
-  selectedTags: PropTypes.func,
+  tags: PropTypes.arrayOf(PropTypes.string),
+  setTags: PropTypes.func,
+
 };
 
 InputTag.defaultProps = {
   placeholder: null,
-  defaultTags: [],
-  selectedTags: null,
+  tags: [],
+  setTags: null,
 };
 
 export default InputTag;

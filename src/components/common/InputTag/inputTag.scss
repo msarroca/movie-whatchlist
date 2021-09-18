@@ -1,11 +1,13 @@
 @import '../../../styles/mixin.scss';
+@import '../../../styles/colors.scss';
+
 
 .container-input {
 	@include flex-config(unset, unset, row, wrap);
 	width: 100%;
 	max-width: 100%;
 	border: none;
-	color: black;
+	color: $color-main;
 	&__list {
 		@include flex-config(unset, unset, row, wrap);
 		padding-top: 7px;
@@ -24,19 +26,20 @@
 
 .tag {
 	@include flex-config(unset, center);
+	font-size: 14px;
 	margin: 7px 10px 0px 0px;
 	padding: 0 5px 0 10px;
-	border: 1px solid orange;
+	border: 1px solid #668ba4;
 	border-radius: 5px;
-	background-color: orange;
+	background-color: $background-color-extra;
 	white-space: nowrap;
-	color: white;
+	color: $white;
 	button {
 		display: flex;
 		padding: 6px;
 		border: none;
 		background-color: unset;
 		cursor: pointer;
-		color: white;
+		color: $white;
 	}
 }
