@@ -8,38 +8,42 @@ import List from "../../components/Home/List";
 import "./home.scss";
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const { data } = useSelector((state) => state.movies);
+  const [isFilterLoading, setIsFilterLoading] = useState(false);
+  const { data, isLoading } = useSelector((state) => state.movies);
   const [filter, setFilter] = useState({ name: "", genre: "" });
   const [list, setList] = useState(data);
-
-  useEffect(() => {
-    setList(data);
-  }, [data]);
 
   const setFilteredList = () => {
     let filteredList = data;
     if (filter.genre !== "") {
       filteredList = data.filter((movie) => movie.genres.some((genre) => genre.toLowerCase() === filter.genre.toLowerCase()));
-      setIsLoading(false);
+      setIsFilterLoading(false);
     }
     if (filter.name !== "") {
       filteredList = filteredList.filter((movie) => movie.name.toLowerCase().includes(filter.name.toLowerCase()));
-      setIsLoading(false);
+      setIsFilterLoading(false);
     }
     setList(filteredList);
   };
 
   useEffect(() => {
-    if (filter.genre !== "" || filter.name !== "") setIsLoading(true);
-    setTimeout(setFilteredList, 3000);
+    setFilteredList();
+  }, [data]);
+
+  useEffect(() => {
+    if (filter.genre !== "" || filter.name !== "") {
+      setIsFilterLoading(true);
+      setTimeout(setFilteredList, 3000);
+    } else {
+      setFilteredList();
+    }
   }, [filter.genre, filter.name]);
 
   return (
     <div className="home-container">
       <Form />
       <Filter filter={filter} onChangeFilter={setFilter} />
-      {isLoading
+      {isFilterLoading || isLoading
         ? <p>...Loading</p> : <List movies={list} />}
     </div>
   );

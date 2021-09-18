@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { updateMovie, deleteMovie } from "../../store/slices/movies/slice";
+import { deleteMovie, updateMovie } from "../../store/slices/movies/actions";
 import Card from "./Card";
 import "../../assets/movieImg.png";
 import "./list.scss";
@@ -16,8 +16,8 @@ const List = ({ movies }) => {
         <Card
           {...movie}
           key={movie.name}
-          updateMovie={(name, value) => dispatch(updateMovie({ index, name, value }))}
-          deleteMovie={() => dispatch(deleteMovie(index))}
+          setUpdateMovie={(name, value) => dispatch(updateMovie({ index, name, value }))}
+          setDeleteMovie={() => dispatch(deleteMovie(index))}
         />
       ))}
     </section>

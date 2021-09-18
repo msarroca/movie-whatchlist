@@ -13,13 +13,13 @@ const moviesSlice = createSlice({
   name: "movies",
   initialState,
   reducers: {
-    addMovie: (state, { payload }) => {
+    setAddMovie: (state, { payload }) => {
       state.data.push(payload);
     },
-    deleteMovie: (state, { payload }) => {
+    setDeleteMovie: (state, { payload }) => {
       state.data = state.data.filter((_, index) => index !== payload);
     },
-    updateMovie: (state, { payload }) => {
+    setUpdateMovie: (state, { payload }) => {
       state.data[payload.index][payload.name] = payload.value;
     },
     setIsLoading: (state, { payload }) => {
@@ -31,6 +31,11 @@ const moviesSlice = createSlice({
   },
 });
 
-export const { addMovie, deleteMovie, updateMovie, setIsLoading, setError } =
-  moviesSlice.actions;
+export const {
+  setAddMovie,
+  setDeleteMovie,
+  setUpdateMovie,
+  setIsLoading,
+  setError,
+} = moviesSlice.actions;
 export default moviesSlice.reducer;

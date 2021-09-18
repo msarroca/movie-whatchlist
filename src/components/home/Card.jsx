@@ -6,7 +6,7 @@ import "../../assets/movieImg.png";
 import "./card.scss";
 
 const Card = ({
-  image, name, genres, watched, updateMovie, deleteMovie,
+  image, name, genres, watched, setUpdateMovie, setDeleteMovie,
 }) => (
   <article className="card">
     <div className="container-image">
@@ -17,8 +17,8 @@ const Card = ({
       <ul className="container-info__genres">
         {genres.map((genre) => <li className="tag" key={genre}>{genre}</li>)}
       </ul>
-      <CheckBox className="container-info__checkbox" isChecked={watched} onChange={() => updateMovie("watched", !watched)} value={watched} name={name} text="watched?" />
-      <Button className="delete-button" text="delete" type="button" handleClick={deleteMovie} />
+      <CheckBox className="container-info__checkbox" isChecked={watched} onChange={() => setUpdateMovie("watched", !watched)} value={watched} name={name} text="watched?" />
+      <Button className="delete-button" text="delete" type="button" handleClick={setDeleteMovie} />
     </div>
   </article>
 );
@@ -28,8 +28,8 @@ Card.propTypes = {
   name: PropTypes.string,
   genres: PropTypes.arrayOf(PropTypes.string),
   watched: PropTypes.bool,
-  updateMovie: PropTypes.func,
-  deleteMovie: PropTypes.func,
+  setUpdateMovie: PropTypes.func,
+  setDeleteMovie: PropTypes.func,
 
 };
 
@@ -38,8 +38,8 @@ Card.defaultProps = {
   name: "",
   genres: [],
   watched: false,
-  updateMovie: null,
-  deleteMovie: null,
+  setUpdateMovie: null,
+  setDeleteMovie: null,
 };
 
 export default Card;
