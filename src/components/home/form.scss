@@ -1,4 +1,5 @@
 @import '../../styles/mixin.scss';
+@import '../../styles/colors.scss';
 
 .form {
 	@include flex-config(center);
@@ -7,20 +8,51 @@
 		width: 30em;
 		display: flex;
 		flex-direction: column;
-		margin: 0 auto;
 		.form-container__label {
 			display: block;
-			margin: 20px;
+			margin: 10px;
+			font-size: 1.2rem;
 		}
+
 		.simple-button {
-			width: 150px;
-			margin: 20px auto;
-			padding: 14px;
-			border: 1px grey solid;
+			border: none;
 			border-radius: 20px;
-			&:hover {
-				background-color: red;
+			color: $white;
+			background-color: $color-secundary;
+			font-size: 1rem;
+			overflow: hidden;
+			width: 135px;
+			margin: 20px auto;
+			padding: 13px;
+			transition: .2s transform ease-in-out;
+			will-change: transform;
+			z-index: 0;
+			
+			&::after {
+				background-color: $background-color-secundary;
+				border-radius: 20px;
+				content: '';
+				display: block;
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transform: translate(-100%, 0) rotate(10deg);
+				transform-origin: top left;
+				transition: .3s transform ease-out;
+				will-change: transform;
+				z-index: -1;
 			}
+				&:hover::after{
+					transform: translate(0, 0);
+				}
+				&:hover {
+					color: $white;
+					border: none;
+					transform: scale(1.05);
+					will-change: transform;
+				}
 		}
 	}
 }
