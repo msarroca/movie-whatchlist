@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Filter from "../../components/Home/Filter";
 import Form from "../../components/Home/Form";
@@ -8,6 +9,7 @@ import List from "../../components/Home/List";
 import "./home.scss";
 
 const Home = () => {
+  const { genreId = "" } = useParams();
   const [isFilterLoading, setIsFilterLoading] = useState(false);
   const { data, isLoading } = useSelector((state) => state.movies);
   const [filter, setFilter] = useState({ name: "", genre: "" });
@@ -29,6 +31,10 @@ const Home = () => {
   useEffect(() => {
     setFilteredList();
   }, [data]);
+
+  useEffect(() => {
+    setFilter({ ...filter, genre: genreId });
+  }, [genreId]);
 
   useEffect(() => {
     if (filter.genre !== "" || filter.name !== "") {
