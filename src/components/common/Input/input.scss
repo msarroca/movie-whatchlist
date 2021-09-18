@@ -1,9 +1,11 @@
+@import '../../../styles/colors.scss';
+
 .input-text {
 	display: flex;
 	width: 100%;
 	border: 1px grey solid;
 	border-radius: 5px;
-	color: black;
+	color: $color-main;
 	outline: none;
 	padding: 14px;
 	margin-top: 14px;
