@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Input = ({
+const RadioButton = ({
   value, text, isSelected, onChange, required, id, name,
 }) => (
   <div className="RadioButton">
@@ -10,7 +10,7 @@ const Input = ({
   </div>
 );
 
-Input.propTypes = {
+RadioButton.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
@@ -20,7 +20,7 @@ Input.propTypes = {
   id: PropTypes.string,
 };
 
-Input.defaultProps = {
+RadioButton.defaultProps = {
   value: null,
   onChange: null,
   required: false,
@@ -30,4 +30,4 @@ Input.defaultProps = {
   id: "",
 };
 
-export default Input;
+export default RadioButton;
