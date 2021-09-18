@@ -1,0 +1,14 @@
+.checkbox {
+  filter: hue-rotate(10deg);
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+  margin: 10px 10px 10px 4px;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  text-transform: capitalize;
+}
