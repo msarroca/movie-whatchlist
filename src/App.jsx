@@ -1,14 +1,16 @@
 import { Provider } from "react-redux";
 import React from "react";
 import store from "./store/store";
-import Home from "./pages/Home";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import "./app.scss";
 
 const App = () => (
 
   <div className="App">
     <Provider store={store}>
       <header className="header-container">
-        <h1>Movies</h1>
+        <Header />
       </header>
       <main className="main-container">
         <Home />
