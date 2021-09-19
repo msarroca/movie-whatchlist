@@ -1,66 +1,28 @@
-@import '../../styles/mixin.scss';
-@import '../../styles/colors.scss';
+@import '../../themes/mixin.scss';
+@import '../../themes/colors.scss';
 
-.nav-container{
-  height: 100%;
-  	@include flex-config(space-between, center);
 
-    .container-logo, .container-button {
-      height: 100%;
-      padding-top: 10px;
-      .logo {
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-left: 10%;
-      }
+.header-container {
+  @include size(unset, 5rem, 0 auto);
+  @include flex-config(space-between, center);
+  max-width: 1180px;
+
+  .container-logo {
+    @include size(unset, 80%, unset, 10px 0 0 25px);
+
+    .logo {
+      @include size(unset, 100%);
+			background-color: transparent;
+			border: 2px $white solid;
+      border-radius: 50%;
+      margin-left: 10%;
+      object-fit: cover;
     }
-		.container-logo {
-			padding-left: 25px;
-		}
-		.container-button {
-			padding-right: 25px;
-		}
-    .simple-button {
-			border: none;
-			border-radius: 20px;
-			color: $white;
-			background-color: $color-secundary;
-			font-size: 0.8rem;
-			overflow: hidden;
-			width: 90px;
-      height: 50%;
-			padding: 10px;
-      margin: 10px 10px 0 0;
-			transition: .2s transform ease-in-out;
-			will-change: transform;
-			z-index: 0;
-      text-transform: capitalize;
-
-      &::after {
-				background-color: $background-color-secundary;
-				border-radius: 20px;
-				content: '';
-				display: block;
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				left: 0;
-				top: 0;
-				transform: translate(-100%, 0) rotate(10deg);
-				transform-origin: top left;
-				transition: .3s transform ease-out;
-				will-change: transform;
-				z-index: -1;
-			}
-				&:hover::after{
-					transform: translate(0, 0);
-				}
-				&:hover {
-					color: $white;
-					border: none;
-					transform: scale(1.05);
-					will-change: transform;
-				}
   }
+
+	.logo-name {
+      @include size(unset, unset, unset, 10px 25px 0 0);
+			color: $transition-color;
+			font-size: 1.3rem;
+	}
 }

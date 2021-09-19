@@ -16,9 +16,7 @@ const App = () => (
   <div className="App">
     <Provider store={store}>
       <Router>
-        <header className="header-container">
-          <Header />
-        </header>
+        <Header />
         <main className="main-container">
           <Switch>
             <Route path="/" exact component={Home} />
