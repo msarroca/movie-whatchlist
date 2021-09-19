@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import Filter from "../../components/Home/Filter";
 import Form from "../../components/Home/Form";
 import List from "../../components/Home/List";
-
+import Spinner from "../../components/common/Spinner/Spinner";
 import "./home.scss";
 
 const Home = () => {
@@ -50,7 +50,7 @@ const Home = () => {
       <Form />
       <Filter filter={filter} onChangeFilter={setFilter} />
       {isFilterLoading || isLoading
-        ? <p>...Loading</p> : <List movies={list} />}
+        ? <Spinner /> : <List movies={list} />}
     </div>
   );
 };
