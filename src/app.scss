@@ -1,9 +1,7 @@
-.header-container {
-    min-width: 100vw;
-    height: 5rem;
-}
+@import '../src/themes/mixin.scss';
 
 .main-container{
-    min-width: 100vw;
-    min-height: calc(100vh - 8rem);
+    @include size(unset, unset, 0 auto);
+    max-width: 1180px;
+    min-height: 100vh;
 }
