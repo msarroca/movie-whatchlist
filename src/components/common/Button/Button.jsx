@@ -18,7 +18,10 @@ const Button = ({
 
 Button.propTypes = {
   className: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
   type: PropTypes.string,
   handleClick: PropTypes.func,
 };
