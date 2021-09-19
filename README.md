@@ -10,13 +10,9 @@ ReactJS, Redux, Redux-ytoolkit, ESlint, Jest, React Testing Library, Sass
 
 ## Screenshots
 
-* Mobile view *
+* Mobile view
 
 ![Captura de pantalla 2021-09-20 a las 0 00 47](https://user-images.githubusercontent.com/43612682/133944466-868042bd-b026-4168-a4c8-059372d7c2dc.png)
-
- * Desktop view *
-
-![Captura de pantalla 2021-09-20 a las 0 01 13](https://user-images.githubusercontent.com/43612682/133944473-a5e09812-3bd2-4ade-919c-ae6d6751d5b5.png)
 
 ## Run Locally
 
