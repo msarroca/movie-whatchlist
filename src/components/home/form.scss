@@ -1,0 +1,17 @@
+@import '../../themes/mixin.scss';
+@import '../../themes/colors.scss';
+
+.form {
+	@include flex-config(center);
+
+	.form-container {
+		@include flex-config(center, unset, column);
+		@include size(30em);
+
+		.form-container__label {
+			@include size(unset, unset, 10px 30px);
+			display: block;
+			font-size: 1.1rem;
+		}
+	}
+}

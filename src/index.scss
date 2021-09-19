@@ -1,0 +1,36 @@
+@import '../src/themes/mixin.scss';
+@import '../src/themes/colors.scss';
+
+*,
+*::after,
+*::before {
+    @include size(unset, unset, 0, 0);
+    box-sizing: border-box;
+}
+html {
+    @include size(unset, 100%);
+    background-color: $background;
+    color: $dark;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+
+        body {
+            @include size(unset, 100%);
+            letter-spacing: 1px;
+            overflow: auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        button {
+            cursor: pointer;
+        }
+}

@@ -1,0 +1,12 @@
+@import '../../../themes/mixin.scss';
+@import '../../../themes/colors.scss';
+
+.input-text {
+	@include size(100%, unset, unset, 14px);
+	border: 1px grey solid;
+	border-radius: 5px;
+	color: $dark;
+	display: flex;
+	margin-top: 14px;
+	outline: none;
+}
