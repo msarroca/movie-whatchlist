@@ -5,7 +5,11 @@ import PropTypes from "prop-types";
 import CheckBox from "../common/Checkbox/Checkbox";
 import Button from "../common/Button/Button";
 import Input from "../common/Input/Input";
+import CONSTANTS from "../../constants";
 import "./card.scss";
+
+const { WATCHED } = CONSTANTS.STATUS;
+const { NAME } = CONSTANTS.TYPE;
 
 const Card = ({
   image, name, genres, watched, setUpdateMovie, setDeleteMovie,
@@ -33,7 +37,7 @@ const Card = ({
                 className="save-button"
                 text={<i className="far fa-check-circle" />}
                 type="button"
-                handleClick={() => setUpdateMovie("name", inputValue)}
+                handleClick={() => setUpdateMovie(NAME, inputValue)}
               />
             </div>
           ) : (
@@ -53,7 +57,7 @@ const Card = ({
         <CheckBox
           className="container-info__checkbox"
           isChecked={watched}
-          onChange={() => setUpdateMovie("watched", !watched)}
+          onChange={() => setUpdateMovie(WATCHED, !watched)}
           value={watched}
           name={name}
           text="watched?"

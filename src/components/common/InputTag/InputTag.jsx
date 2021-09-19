@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import CONSTANTS from "../../../constants";
 import "./inputTag.scss";
+
+const { ENTER } = CONSTANTS.EVENTS.KEY;
 
 const InputTag = ({
   placeholder, tags, setTags,
@@ -52,7 +55,7 @@ const InputTag = ({
         className="container-input__tag"
         data-testid="input-tag"
         type="text"
-        onKeyDown={(event) => (event.key === "Enter" ? addTags(event) : null)}
+        onKeyDown={(event) => (event.key === ENTER ? addTags(event) : null)}
         onChange={onChangeGenres}
         value={input}
         placeholder={placeholder}

@@ -5,11 +5,14 @@ import PropTypes from "prop-types";
 import RadioButton from "../common/RadioButton/RadioButton";
 import Input from "../common/Input/Input";
 import Button from "../common/Button/Button";
+import CONSTANTS from "../../constants";
 import "../../assets/movieImg.png";
 import "./filter.scss";
 
+const { HORROR, ROMANCE, COMEDY } = CONSTANTS.GENRES;
+
 const Filter = ({ filter, onChangeFilter }) => {
-  const genresFilter = ["Horror", "Romance", "Comedy"];
+  const genresFilter = [HORROR, ROMANCE, COMEDY];
   const history = useHistory();
 
   return (
