@@ -20,7 +20,7 @@ export const createMovie = (movie) => async (dispatch) => {
     response = await addMovieToApi(movie);
     dispatch(setAddMovie(movie));
   } catch (error) {
-    dispatch(setError(error));
+    dispatch(setError(error.message));
   } finally {
     dispatch(setIsLoading(false));
   }
@@ -35,7 +35,7 @@ export const deleteMovie = (id) => async (dispatch) => {
     response = await deleteMovieToApi(id);
     dispatch(setDeleteMovie(id));
   } catch (error) {
-    dispatch(setError(error));
+    dispatch(setError(error.message));
   } finally {
     dispatch(setIsLoading(false));
   }
@@ -50,7 +50,7 @@ export const updateMovie = (data) => async (dispatch) => {
     response = await updateMovieToApi(data);
     dispatch(setUpdateMovie(data));
   } catch (error) {
-    dispatch(setError(error));
+    dispatch(setError(error.message));
   } finally {
     dispatch(setIsLoading(false));
   }
