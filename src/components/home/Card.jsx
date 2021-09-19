@@ -15,7 +15,7 @@ const Card = ({
 
   return (
 
-    <article className="card">
+    <article className="card" data-testid="card">
       <div className="card-image">
         <img className="image" src={image} alt="movie" />
       </div>

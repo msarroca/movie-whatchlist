@@ -35,7 +35,7 @@ const Form = () => {
   };
 
   return (
-    <form className="form" onSubmit={onAddNewMovie}>
+    <form className="form" onSubmit={onAddNewMovie} data-testid="form">
       <div className="form-container">
         <label className="form-container__label" htmlFor="title">
           Movie title

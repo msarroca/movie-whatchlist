@@ -11,7 +11,7 @@ const List = ({ movies }) => {
   const dispatch = useDispatch();
 
   return (
-    <section className="list-container">
+    <section className="list-container" data-testid="list">
       {movies && movies.map((movie) => (
         <Card
           {...movie}
