@@ -1,58 +1,17 @@
-@import '../../styles/mixin.scss';
-@import '../../styles/colors.scss';
+@import '../../themes/mixin.scss';
+@import '../../themes/colors.scss';
 
 .form {
 	@include flex-config(center);
 
 	.form-container {
-		width: 30em;
-		display: flex;
-		flex-direction: column;
-		.form-container__label {
-			display: block;
-			margin: 10px;
-			font-size: 1.2rem;
-		}
+		@include flex-config(center, unset, column);
+		@include size(30em);
 
-		.simple-button {
-			border: none;
-			border-radius: 20px;
-			color: $white;
-			background-color: $color-secundary;
-			font-size: 1rem;
-			overflow: hidden;
-			width: 135px;
-			margin: 20px auto;
-			padding: 13px;
-			transition: .2s transform ease-in-out;
-			will-change: transform;
-			z-index: 0;
-			
-			&::after {
-				background-color: $background-color-secundary;
-				border-radius: 20px;
-				content: '';
-				display: block;
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				left: 0;
-				top: 0;
-				transform: translate(-100%, 0) rotate(10deg);
-				transform-origin: top left;
-				transition: .3s transform ease-out;
-				will-change: transform;
-				z-index: -1;
-			}
-				&:hover::after{
-					transform: translate(0, 0);
-				}
-				&:hover {
-					color: $white;
-					border: none;
-					transform: scale(1.05);
-					will-change: transform;
-				}
+		.form-container__label {
+			@include size(unset, unset, 10px 30px);
+			display: block;
+			font-size: 1.1rem;
 		}
 	}
 }
