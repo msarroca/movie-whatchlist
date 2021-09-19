@@ -48,7 +48,7 @@
 					@include flex-config(space-around, baseline);
 					@include size(100%);
 
-					.edit-button {
+					.save-button {
 						margin-left: 10px;
 					}	
 				}
@@ -63,7 +63,7 @@
           text-transform: capitalize;
 
           .tag {
-						@include size(unset, unset, unset, 4px 10px);
+						@include size(unset, unset, 7px 10px 0px 0px, 4px 10px);
           }
       }
     }
