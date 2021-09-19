@@ -5,8 +5,6 @@ import PropTypes from "prop-types";
 import CheckBox from "../common/Checkbox/Checkbox";
 import Button from "../common/Button/Button";
 import Input from "../common/Input/Input";
-import Edit from "../../assets/edit.png";
-
 import "./card.scss";
 
 const Card = ({
@@ -18,14 +16,13 @@ const Card = ({
   return (
 
     <article className="card">
-      <div className="container-image">
+      <div className="card-image">
         <img className="image" src={image} alt="movie" />
       </div>
-      <div className="container-info">
-
+      <div className="card-info">
         {isEdit
           ? (
-            <>
+            <div className="card-info__input-edit">
               <Input
                 placeholder="Enter new name"
                 value={inputValue}
@@ -33,21 +30,19 @@ const Card = ({
                 name="editName"
               />
               <Button
-                className="edit-button"
-                text="Save"
+                className="save-button"
+                text={<i className="far fa-check-circle" />}
                 type="button"
                 handleClick={() => setUpdateMovie("name", inputValue)}
               />
-            </>
+            </div>
           ) : (
-            <>
-              <p className="container-info__title">{name}</p>
-              <div onClick={() => setEdit(!isEdit)}>
-                <img className="image" src={Edit} alt="edit" width="20px" />
-              </div>
-            </>
+            <div className="card-info__edit">
+              <Button className="edit-button" handleClick={() => setEdit(!isEdit)} type="button" text={<i className="far fa-edit" />} />
+              <p className="title">{name}</p>
+            </div>
           )}
-        <ul className="container-info__genres">
+        <ul className="card-info__genres">
           {genres.map((genre) => <li className="tag" key={genre}>{genre}</li>)}
         </ul>
         <CheckBox
