@@ -4,9 +4,30 @@ This is a fictional web app that offers a personalized list of movies. The user 
 
 The project has been commissioned as a technical test. 
 
+## Features 
+
+•	User can add the movie name they would like to watch.
+
+•	User can add movie genres as tags, each movie can have more than one genres.
+
+•	User can see in a list below the form with the following fields:
+
+       i.	Checkbox that shows if movie is watched or not.
+       ii.	Movie name.
+       iii.	Genres.
+       iv.	Delete button.
+
+•	User can check and unchecks a movie.
+
+•	User can see only the movies which are in that genre with three radio button genres. Clicking on the reset button should show original list.
+
+•	User can search the movies based on their name.
+
+•	User can edit movie name.
+
 ## Tech Stack
 
-ReactJS, Redux, Redux-ytoolkit, ESlint, Jest, React Testing Library, Sass
+ReactJS, Redux, redux-toolkit, ESlint, Jest, React Testing Library, Sass
 
 ## Screenshots
 
