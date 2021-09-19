@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./radioButton.scss";
 
 const RadioButton = ({
   value, text, isSelected, onChange, required, id, name,
 }) => (
-  <div className="RadioButton">
-    <input id={id} type="radio" onChange={onChange} value={value} name={name} checked={isSelected} required={required} />
-    <label htmlFor={id}>{text}</label>
+  <div className="radio-button">
+    <input className="radio-button__input" id={id} type="radio" onChange={onChange} value={value} name={name} checked={isSelected} required={required} />
+    <label className="radio-button__label" htmlFor={id}>{text}</label>
   </div>
 );
 
