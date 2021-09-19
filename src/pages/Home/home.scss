@@ -1,5 +1,6 @@
+@import '../../themes/mixin.scss';
+
 .home-container {
-	max-width: 1180px;
-	margin: 0px auto;
+	@include size(unset, unset, 0 auto);
 	padding-top: 0.5rem;
 }
