@@ -39,13 +39,28 @@ const Form = () => {
       <div className="form-container">
         <label className="form-container__label" htmlFor="title">
           Movie title
-          <Input onChange={(e) => setInputName(e.target.value)} value={inputName} name="name" placeholder="Insert the movie's title and click enter to save" type="text" required />
+          <Input
+            onChange={(e) => setInputName(e.target.value)}
+            value={inputName}
+            name="name"
+            placeholder="Insert the movie's title and click enter to save"
+            type="text"
+            required
+          />
         </label>
         <label className="form-container__label" htmlFor="genres">
           Movie genres
-          <InputTag setTags={setSelectedTags} placeholder="Insert a genre and click enter to save" tags={selectedTags} />
+          <InputTag
+            setTags={setSelectedTags}
+            placeholder="Insert a genre and click enter to save"
+            tags={selectedTags}
+          />
         </label>
-        <Button type="submit" className="simple-button" text="Add movie" />
+        <Button
+          type="submit"
+          className="simple-button"
+          text="Add movie"
+        />
       </div>
     </form>
   );

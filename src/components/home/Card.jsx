@@ -38,7 +38,12 @@ const Card = ({
             </div>
           ) : (
             <div className="card-info__edit">
-              <Button className="edit-button" handleClick={() => setEdit(!isEdit)} type="button" text={<i className="far fa-edit" />} />
+              <Button
+                className="edit-button"
+                handleClick={() => setEdit(!isEdit)}
+                type="button"
+                text={<i className="far fa-edit" />}
+              />
               <p className="title">{name}</p>
             </div>
           )}

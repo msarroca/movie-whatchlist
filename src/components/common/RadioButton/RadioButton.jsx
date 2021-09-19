@@ -6,8 +6,23 @@ const RadioButton = ({
   value, text, isSelected, onChange, required, id, name,
 }) => (
   <div className="radio-button">
-    <input className="radio-button__input" id={id} type="radio" onChange={onChange} value={value} name={name} checked={isSelected} required={required} />
-    <label className="radio-button__label" htmlFor={id}>{text}</label>
+    <input
+      className="radio-button__input"
+      id={id}
+      type="radio"
+      onChange={onChange}
+      value={value}
+      name={name}
+      checked={isSelected}
+      required={required}
+    />
+    <label
+      className="radio-button__label"
+      htmlFor={id}
+    >
+      {text}
+
+    </label>
   </div>
 );
 

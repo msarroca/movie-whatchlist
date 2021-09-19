@@ -17,7 +17,13 @@ const Checkbox = ({
       required={required}
     />
     <span />
-    <label htmlFor={name} className="checkbox-label">{text}</label>
+    <label
+      htmlFor={name}
+      className="checkbox-label"
+    >
+      {text}
+
+    </label>
   </div>
 );
 

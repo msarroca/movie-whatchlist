@@ -19,8 +19,15 @@ const App = () => (
         <Header />
         <main className="main-container">
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/genre=:genreId" component={Home} />
+            <Route
+              path="/"
+              exact
+              component={Home}
+            />
+            <Route
+              path="/genre=:genreId"
+              component={Home}
+            />
           </Switch>
         </main>
       </Router>

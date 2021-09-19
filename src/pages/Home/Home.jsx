@@ -48,7 +48,10 @@ const Home = () => {
   return (
     <div className="home-container">
       <Form />
-      <Filter filter={filter} onChangeFilter={setFilter} />
+      <Filter
+        filter={filter}
+        onChangeFilter={setFilter}
+      />
       {isFilterLoading || isLoading
         ? <Spinner /> : <List movies={list} />}
     </div>
