@@ -34,10 +34,11 @@ const InputTag = ({
     <div className="container-input">
       <ul className="container-input__list" id="tags">
         {tags.map((tag, index) => (
-          <li key={tag} className="tag">
+          <li key={tag} className="tag" data-testid="tag">
             <span className="tag-title">{tag}</span>
             <button
               className="tag-close-icon"
+              data-testid="delete-tag-button"
               id={index}
               onClick={(e) => removeTags(e, index)}
               type="button"
@@ -49,6 +50,7 @@ const InputTag = ({
       </ul>
       <input
         className="container-input__tag"
+        data-testid="input-tag"
         type="text"
         onKeyDown={(event) => (event.key === "Enter" ? addTags(event) : null)}
         onChange={onChangeGenres}

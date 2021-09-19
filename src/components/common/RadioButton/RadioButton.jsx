@@ -5,8 +5,11 @@ import "./radioButton.scss";
 const RadioButton = ({
   value, text, isSelected, onChange, required, id, name,
 }) => (
-  <div className="radio-button">
+  <div
+    className="radio-button"
+  >
     <input
+      data-testid="radio-button"
       className="radio-button__input"
       id={id}
       type="radio"

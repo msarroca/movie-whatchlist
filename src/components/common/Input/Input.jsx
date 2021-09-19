@@ -7,6 +7,7 @@ const Input = ({
 }) => (
   <input
     id={name}
+    data-testid="input"
     value={value}
     name={name}
     className="input-text"

@@ -8,6 +8,7 @@ const Checkbox = ({
   <div>
     <input
       id={name}
+      data-testid="checkbox"
       className="checkbox"
       name={name}
       type="checkbox"
@@ -22,7 +23,6 @@ const Checkbox = ({
       className="checkbox-label"
     >
       {text}
-
     </label>
   </div>
 );
