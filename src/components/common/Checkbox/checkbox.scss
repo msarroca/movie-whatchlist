@@ -1,11 +1,11 @@
 .checkbox {
-  filter: hue-rotate(10deg);
+  filter: hue-rotate(205deg);
 }
 
 input[type=checkbox] {
-  transform: scale(1.5);
-  margin: 10px 10px 10px 4px;
   cursor: pointer;
+  margin: 10px 10px 10px 3px;
+  transform: scale(1.2);
 }
 
 .checkbox-label {
