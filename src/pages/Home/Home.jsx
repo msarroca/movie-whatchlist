@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Filter from "../../components/Home/Filter";
-import Form from "../../components/Home/Form";
-import List from "../../components/Home/List";
+import Filter from "../../components/home/Filter";
+import Form from "../../components/home/Form";
+import List from "../../components/home/List";
 import Spinner from "../../components/common/Spinner/Spinner";
 import "./home.scss";
 

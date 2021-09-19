@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import store from "./store/store";
-import Header from "./components/Header/Header";
+import Header from "./components/header/Header";
 import Home from "./pages/Home/Home";
 import "./app.scss";
 
