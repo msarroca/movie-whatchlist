@@ -4,6 +4,7 @@
 
 .radio-button{
   @include flex-config(center, center);
+  text-transform: capitalize;
 }
 
 input[type='radio']:after {
